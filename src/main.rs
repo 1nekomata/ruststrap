@@ -11,16 +11,17 @@ fn main() {
         if !args[1].is_empty() {
             floc = args[1].clone();
         }
-
-        let mut i: usize = 2;
-        loop {
-            cuse = cuse + "use " + &args[i] + ";" + "\n";
-            i += 1;
-            if args.len() <= i {
-                break;
+        if args.len() >= 3 {
+            let mut i: usize = 2;
+            loop {
+                cuse = cuse + "use " + &args[i] + ";" + "\n";
+                i += 1;
+                if args.len() <= i {
+                    break;
+                }
             }
+            cuse += "\n";
         }
-        cuse += "\n";
     }
     
     let sstr: String = cuse + "fn main(){\n\n}";
